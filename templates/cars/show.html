@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul class="table">
+    <li>
+        <div>
+        <h1>{{car.make}}</h1>
+        </div>
+        <div>
+            <h2>Model : {{car.model}}</h2>
+        </div>
+        <div>
+            <b>Stock Quantity : </b>{{car.stock_quantity}}
+        </div>
+        <div>
+            <b>Buying Cost : </b>{{car.buying_cost}}
+        </div>
+        <div>
+             <b>Selling For : </b>{{car.selling_price}}
+        </div>
+        <div>
+            <b>Manufacturer : </b>{{manufacturer.name}}
+        </div>
+    
+    
+   
+    
+    </li>
+</ul>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

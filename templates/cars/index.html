@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="img-center">
+<img src="{{ url_for('static' , filename = 'images/amggt.avif')}}" alt="cars theme">   
+</div>
+<h1 style="text-align:center;">Cars</h1>
+<ul class="table">
+{% for car in cars %}
+
+<li>
+    
+    <h2>{{car.make}} : <a href="/cars/{{car.id}}" class="red-text">{{car.model}}</a></h2>
+    <br>
+    <div><b>Stock :  </b>{{car.stock_quantity}}
+    <span>
+        {% if car.stock_quantity <= 3 %}
+            {% if car.stock_quantity == 0 %}
+                <span><b class="red-text">OUT OF STOCK</b></span>
+            {% else %}
+                <span><b class="red-text">LOW STOCK</b></span>
+            {% endif %}
+        {% else %}
+        <b class="red-text">Stocked and Ready</b>
+        {% endif %}
+    
+    </span>
+    <div>
+    <b>Manufacturer : </b>{{car.manufacturer.name}}
+    </div>
+    
+    <span><a href="/cars/{{car.id}}/edit"><input type="submit" value="Edit This Car"></a></span>
+</li>
+    {% endfor %}
+</ul>
+<a href="/cars/new"><input type="submit" value="Add New Car" class="button"></a>
+
+{% endblock content %}

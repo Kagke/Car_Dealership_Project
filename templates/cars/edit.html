@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="form-container">
+<form action="/cars/{{car.id}}" method = "POST" class="input-field">
+    <div>
+        <label for="make">Make : </label>
+        <input id="make" name = "make" type="text" value="{{car.make}}" class="input-field" >
+    </div>
+    <div>      
+        <label for="model">Model : </label>
+        <input id = "model" name="model" type="tel" value="{{car.model}}" class="input-field">
+    </div>
+    <div>
+        <label for="stock_quantity">Stock Quantity :</label>
+        <input id="stock_quantity" name = "stock_quantity" type="text" value="{{car.stock_quantity}}" class="input-field">
+         
+            
+        
+    </div>
+    <div>
+        <label for="buying_cost">Buying Cost : </label>
+        <input id="buying_cost" name = "buying_cost" type="text" value="{{car.buying_cost}}" class="input-field" >
+    </div>
+    <div>
+        <label for="selling_price">Selling Price : </label>
+        <input id="selling_price" name = "selling_price" type="selling_price" value="{{car.selling_price}}" class="input-field">
+    </div>
+    <div>
+        <label for="manufacturer_id">Manufacturer : </label>
+        
+        <select id="manufacturer_id" name = "manufacturer_id" type="dropdown" value="{{car.manufacturer}}" class="input-field" >
+        {% for manufacturer in manufacturers %}
+        <option value="{{manufacturer.id}}" 
+        {% if manufacturer.id == car.manufacturer.id %}
+            selected
+        {% endif %}
+        >{{manufacturer.name}}</option>
+
+        {% endfor %}
+    </div>
+    <br>
+    <div><input type="submit" value="Apply changes" class="button"></div>
+</form>
+</div>
+
+{% endblock content %}

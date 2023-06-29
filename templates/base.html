@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kagke's Dealership</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static' , filename = 'styles.css')}}">
+  
+</head>
+<body>
+
+    <header class="header">
+        <!-- <img src="static/images/logo.png" alt="Logo"> -->
+       <a href="/"> <img src="{{ url_for('static' , filename = 'images/logo.png')}}" alt="logo"></a>
+      <ul>
+      <li>
+        <a href="/cars" class="nav-link">Cars</a>
+      </li>
+      <li>
+        <a href="/manufacturers" class="nav-link">Manufacturers</a>
+      </li>
+    </ul>
+  
+ 
+
+       
+    </header>
+   <main>
+    
+    
+  
+   {% block content %}
+  
+        {% endblock%}
+  </main>
+</body>
+</html>

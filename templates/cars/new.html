@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="form-container">
+<form action="/cars" method = "POST">
+    <div>
+        <label for="make">Make : </label>
+        <input id="make" name = "make" type="text"  class="input-field">
+    </div>
+    <div>      
+        <label for="model">Model : </label>
+        <input id = "model" name="model" type="tel"  class="input-field">
+    </div>
+    <div>
+        <label for="stock_quantity">Stock Quantity :</label>
+        <input id="stock_quantity" name = "stock_quantity" type="text" class="input-field">
+    </div>
+    <div>
+        <label for="buying_cost">Buying Cost : </label>
+        <input id="buying_cost" name = "buying_cost" type="text"  class="input-field">
+    </div>
+    <div>
+        <label for="selling_price">Selling Price : </label>
+        <input id="selling_price" name = "selling_price" type="selling_price"  class="input-field">
+    </div>
+    <div>
+        <label for="manufacturer_id">Manufacturer : </label>
+        
+        <select id="manufacturer_id" name = "manufacturer_id" type="dropdown"  class="input-field">
+        {% for manufacturer in manufacturers %}
+        <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+        {% endfor %}
+    </div>
+    <br>
+    <div><input type="submit" value="ADD NEW CAR" class="button"></div>
+</form>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="img-center">
+<img src="{{ url_for('static' , filename = 'images/manufacturers.jpg')}}" alt="logo">
+</div>
+<h1>Manufactors</h1>
+<ul class ="table">
+{% for manufacturer in manufacturers %}
+   <li>
+    
+    <h2>{{manufacturer.name}}</h2>
+    <br>
+    <div><b>Phone Number : </b>{{manufacturer.phone_number}}</div>
+    <b>Email : </b>{{manufacturer.email}}
+    
+    <div><a href="/manufacturers/{{manufacturer.id}}/edit"><input type="submit" value="Edit This Manufactor"></a></div>
+    </li>
+    {% endfor %}
+</ul>
+<a href="/manufacturers/new"><input type="submit" value="Add New Manufacturer" class="button"></a>
+<!-- button to take you to path called "manufacturers/new.html" txt : add manu  -->
+{% endblock content %}
